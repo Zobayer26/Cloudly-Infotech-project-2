@@ -71,8 +71,8 @@ const ProductDetails = ({ productId }: { productId: number }) => {
             </div>
             <div className="px-[30px] mt-[10px]">
                 <div className="border-4 border-[#39a1ed] pt-[12px] pb-[25px]
-                flex gap-[20px]">
-                    <div className="w-1/2 border-4 border-[#95ccf4] border-dotted">
+                flex flex-col md:flex-row gap-[20px]">
+                    <div className="w-1/2 border-4 border-[#95ccf4] flex flex-col justify-center items-center md:items-start border-dotted">
                         <div className="w-[350px] h-[300px] max-w-[300px] max-h-[300px]">
 
                             {productData?.images && productData.images[0] && (
@@ -95,7 +95,7 @@ const ProductDetails = ({ productId }: { productId: number }) => {
                             }
                         </div>
                     </div>
-                    <div className="w-1/2 border-4 max-h-[200px] border-[#95ccf4]
+                    <div className="w-1/2 border-4 max-h-full h-full border-[#95ccf4]
                      border-dotted  flex flex-col gap-[15px] ">
                         <Rating name="halfefau-rating-read" value={rating}
                             precision={0.1} readOnly />
@@ -130,7 +130,8 @@ const ProductDetails = ({ productId }: { productId: number }) => {
             </div>
             <div className="px-[30px]">
                 <h1 className=" text-[30px] font-semibold mb-3">All products</h1>
-                <div className="pl-[25px] grid grid-cols-4 gap-[10px]">
+                <div className="pl-[25px] grid grid-cols-2  md:grid-cols-3 xl:grid-cols-4
+                pb-[20px] justify-items-center gap-[10px]">
                     {
                         allproductData?.map((product) => (
                             <div key={product.id} onClick={() => router.push(`/Products/${product.id}`)}
