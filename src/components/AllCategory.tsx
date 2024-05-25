@@ -98,7 +98,7 @@ const AllCategory = () => {
                     ))}
                 </div>
             </div>
-            <div className="block md: cursor-pointer mt-[20px]"
+            <div className="block md:hidden cursor-pointer mt-[20px]"
                 onClick={() => setIsOpen(!isOpen)}>
                 <svg xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24" width="24" height="24">
