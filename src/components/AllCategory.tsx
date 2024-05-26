@@ -5,6 +5,10 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react"
 import Banner from "./Banner";
+import Drawer from '@mui/material/Drawer';
+import Button from '@mui/material/Button';
+
+
 
 type DataItem = {
     slug: string;
@@ -87,6 +91,11 @@ const AllCategory = () => {
     const handleClick: any = (id: number) => {
         router.push(`/Products/${id}`)
     }
+    const [open, setOpen] = useState(false);
+
+    const toggleDrawer = (newOpen: boolean) => () => {
+        setOpen(newOpen);
+    }
     return (
         <div className="flex gap-[20px]">
             <div className=" hidden md:flex flex-col gap-4 px-2">
@@ -99,40 +108,28 @@ const AllCategory = () => {
                     ))}
                 </div>
             </div>
-            <div className="block md:hidden cursor-pointer mt-[20px]"
-                onClick={() => setIsOpen(!isOpen)}>
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M2 6h20v2H2zm0 5h20v2H2zm0 5h20v2H2z" />
-                </svg>
-
-            </div>
-            {
-                isOpen &&
-                <div className={`absolute top-0 left-0  
-                ${isOpen ? "translate-x-0" : "translate-x-[-400px]"} 
-                  transition-all ease-in-out  duration-1000 z-20
-                 bg-[#383838] w-[400px] h-full px-[20px] py-[30px]`}>
-                    <div className=" flex flex-col gap-4 px-2 text-white">
-                        <div className=" w-[40px] h-[40px] flex justify-center items-center border
-                         border-white rounded-full">
-                            <h1 onClick={() => setIsOpen(!open)}
-                                className=" text-xl font-semibold  cursor-pointer">
-                                X
-                            </h1>
-                        </div>
-                        <h1 className="text-xl font-semibold mt-[20px] cursor-pointer">All catergory</h1>
-                        <div className="flex flex-col gap-[10px]">
+            <div className=" mt-5 md:hidden">
+                <Button onClick={toggleDrawer(true)}>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M2 6h20v2H2zm0 5h20v2H2zm0 5h20v2H2z" />
+                    </svg>
+                </Button>
+                <Drawer open={open} onClose={toggleDrawer(false)}>
+                    <div className=" w-[400px] bg-[#1b6392]  text-white px-[40px] py-10">
+                        <h1 className=" capitalize">All category</h1>
+                        <div className="px-5 py-3 flex flex-col gap-[10px]">
                             {data.map((item) => (
-                                <div key={item.slug} className=" cursor-pointer">
+                                <div key={item.slug} className=" px-3 py-2  rounded-md  transition-all duration-300
+                                 hover:bg-[#383838] hover:shadow-md cursor-pointer">
                                     {item.slug}
                                 </div>
                             ))}
                         </div>
                     </div>
-                </div>
-            }
+                </Drawer>
 
+            </div>
             <div className="flex-grow">
                 <h1 className="ml-[20px] font-[700] text[26px] leading-[30px]
                  my-[20px]">Smart Phones</h1>
