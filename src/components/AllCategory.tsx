@@ -4,6 +4,7 @@ import { Rating } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react"
+import Banner from "./Banner";
 
 type DataItem = {
     slug: string;
@@ -158,6 +159,7 @@ const AllCategory = () => {
                         ))
                     }
                 </div>
+                <Banner />
                 <h1 className="ml-[20px] font-[700] text[26px] leading-[30px] my-[20px]">Laptop</h1>
                 <div className=" grid grid-cols-1 md:grid-cols-4">
                     {
