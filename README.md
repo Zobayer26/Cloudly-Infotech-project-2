@@ -26,7 +26,7 @@ This project is a simple two-page e-commerce web application built using NextJS.
 
 - **NodeJS**: v20.11.0
 - **NextJS**: v14.2.3
-- **Typescript **: 5
+- **Typescript**: 5
 - **Tailwind CSS**: 3.4.1"
 - **Material UI**: 5.15.18
 
@@ -61,13 +61,14 @@ bun dev
 ```
 
 **OR**
-  1. Download project
-  2. unzip file
-  3. open with code editor such as vs code
-  4. open terminal
-  5. cd path/to/unzipped-folder
-  6. download dependencies: npm install
-  7. for run project : npm run dev
+
+1. Download project
+2. unzip file
+3. open with code editor such as vs code
+4. open terminal
+5. cd path/to/unzipped-folder
+6. download dependencies: npm install
+7. for run project : npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -101,6 +102,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 For any questions or feedback, please contact:
 
-Name: Zobayer Hossain
-Email: zobayerarif126@gmail.com
-linkedIn: [https://www.linkedin.com/in/md-zobayer-hossain-899921220/](https://www.linkedin.com/in/md-zobayer-hossain-899921220/)
+- [Email](mailto:zobayerarif126@gmail.com)
+
+- linkedIn: [https://www.linkedin.com/in/md-zobayer-hossain-899921220/](https://www.linkedin.com/in/md-zobayer-hossain-899921220/)
