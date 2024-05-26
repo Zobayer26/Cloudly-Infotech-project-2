@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const Banner = () => {
     return (
-        <div className="w-full flex gap-[10px] max-w-[88%]  px-10 py-5 my-[20px]  items-center mx-auto max-[300px] bg-[#ffe7d6]">
+        <div className="w-full flex flex-col md:flex-row gap-[10px] max-w-[88%]  px-10 py-5 my-[20px]  items-center mx-auto max-[300px] bg-[#ffe7d6]">
             <div className="w-1/2 flex flex-col gap-[30px]">
                 <h1 className=" text-[44px] font-[600] leading-[50px]">
                     Mackbook Pro
@@ -21,10 +21,15 @@ const Banner = () => {
                     </button>
                 </div>
             </div>
-            <div className="w-1/2 flex justify-end">
-                <Image
-                    src={"https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/1.png"}
-                    alt="" width={300} height={300} objectFit="cover" />
+            <div className="w-1/2 flex justify-end ">
+                <div className=" relative">
+                    <Image src={"https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/1.png"}
+                        alt="" width={300} height={300} objectFit="cover" />
+                    <div className=" w-[100px] h-[100px] rounded-full bg-[#ffcead] absolute
+                    top-0 left-0 translate-x-[20%] translate-y-[40%] flex justify-center items-center">
+                        <p className=" font-[600]">$1999</p>
+                    </div>
+                </div>
             </div>
         </div>
     )
