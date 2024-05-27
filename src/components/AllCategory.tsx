@@ -112,12 +112,12 @@ const AllCategory = () => {
     return (
         <div className="flex gap-[20px]">
             <div className=" hidden md:flex flex-col gap-4 px-2">
-                <h1 onClick={()=>setFilterCategory("All")}
-                 className=" text-xl font-semibold mt-[20px] cursor-pointer">All categories</h1>
+                <h1 onClick={() => setFilterCategory("All")}
+                    className=" text-xl font-semibold mt-[20px] cursor-pointer">All categories</h1>
                 <div className="flex flex-col gap-[10px]">
                     {data.map((item) => (
                         <div key={item.slug}
-                            onClick={() =>{
+                            onClick={() => {
                                 setFilterCategory(item.slug)
                                 filterProductCategory(item.slug)
                             }}
@@ -135,18 +135,18 @@ const AllCategory = () => {
                     </svg>
                 </Button>
                 <Drawer open={open} onClose={toggleDrawer(false)}>
-                    <div className=" w-[400px] bg-[#1b6392]  text-white px-[40px] py-10">
-                        <h1  onClick={() =>{
-                                setFilterCategory("All")
-                            }}
-                         className=" capitalize">All category</h1>
+                    <div className=" max-w-[250px] sm:max-w-[400px] w-full bg-[#1b6392]  text-white px-[40px] py-10">
+                        <h1 onClick={() => {
+                            setFilterCategory("All")
+                        }}
+                            className=" capitalize">All category</h1>
                         <div className="px-5 py-3 flex flex-col gap-[10px]">
                             {data.map((item) => (
-                                <div  onClick={()=>{
+                                <div onClick={() => {
                                     setFilterCategory(item.slug)
                                     filterProductCategory(item.slug)
                                 }}
-                                key={item.slug} className=" px-3 py-2  rounded-md  transition-all duration-300
+                                    key={item.slug} className=" px-3 py-2  rounded-md  transition-all duration-300
                                  hover:bg-[#383838] hover:shadow-md cursor-pointer">
                                     {item.slug}
                                 </div>
